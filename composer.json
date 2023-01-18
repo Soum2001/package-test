@@ -6,5 +6,6 @@
             "Soumyaa\\Openai\\": "src/"
         }
     },
+    "minimum-stability": "stable",
     "require": {}
 }
