@@ -1,0 +1,10 @@
+{
+    "name": "soumyaa/openai",
+    "type": "project",
+    "autoload": {
+        "psr-4": {
+            "Soumyaa\\Openai\\": "src/"
+        }
+    },
+    "require": {}
+}
