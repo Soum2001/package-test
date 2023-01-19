@@ -11,9 +11,9 @@ class Openai
         /**
          * @Route("/openai", name="app_openai")
          */
-        public function completion()
+        public function completion($api="")
         {
-            $apiKey = "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";
+            $apiKey = "$api";
             $data = [
                 'prompt' => 'What is the capital of odisha',
             ];
@@ -23,11 +23,11 @@ class Openai
             ];
             $url = "https://api.openai.com/v1/engines/text-davinci-002/completions";
             $type= "POST";
-            return $this->callOpenAI($data, $url, $content_type,$type);
+            return $this->callOpenAI($data, $url, $content_type,$type,$apiKey);
         }
-        public function fineTune()
+        public function fineTune($api="")
         {
-            $apiKey = "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";
+            $apiKey = "$api";
             $data = [
                 "model" => "curie",
                 "prompt"=>"Overjoyed with the new iPhone! ->", 
@@ -41,11 +41,11 @@ class Openai
             ];
             $url = "https://api.openai.com/v1/completions";
             $type= "POST";
-            return $this->callOpenAI($data, $url, $content_type,$type);
+            return $this->callOpenAI($data, $url, $content_type,$type,$apiKey);
         }
-        public function edit()
+        public function edit($api="")
         {
-            $apiKey = "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";
+            $apiKey = "$api";
             $data = [
                 "model" => "text-davinci-edit-001",
                 "input" => "What day of the wek is it?",
@@ -57,11 +57,11 @@ class Openai
             ];
             $url = "https://api.openai.com/v1/edits";
             $type= "POST";
-            return $this->callOpenAI($data, $url,$content_type,$type);
+            return $this->callOpenAI($data, $url,$content_type,$type,$apiKey);
         }
-        public function embeddings()
+        public function embeddings($api="")
         {
-            $apiKey = "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";
+            $apiKey = "$api";
             $data = [
                 "model" => "text-embedding-ada-002",
                 "input" => "The food was delicious and the waiter...",
@@ -73,11 +73,11 @@ class Openai
             ];
             $url = "https://api.openai.com/v1/embeddings";
             $type= "POST";
-            return $this->callOpenAI($data, $url, $content_type,$type);
+            return $this->callOpenAI($data, $url, $content_type,$type,$apiKey);
         }
-        public function files()
+        public function files($api="")
         {
-            $apiKey = "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";
+            $apiKey = "$api";
             $data = [
               
                     "id"=> "file-ccdDZrC3iZVNiQVeEA6Z66wf",
@@ -96,11 +96,11 @@ class Openai
             ];
             $url = "https://api.openai.com/v1/files";
             $type= "GET";
-            return $this->callOpenAI($data, $url, $content_type,$type);
+            return $this->callOpenAI($data, $url, $content_type,$type,$apiKey);
         }
-        public function moderation()
+        public function moderation($api="")
         {
-            $apiKey = "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";
+            $apiKey = "$api";
             $data = [
                 "id"=> "modr-5MWoLO",
                 "model"=> "text-moderation-001",
@@ -134,11 +134,11 @@ class Openai
             ];
             $url = "https://api.openai.com/v1/moderations";
             $type= "POST";
-            return $this->callOpenAI($data, $url, $content_type,$type);
+            return $this->callOpenAI($data, $url, $content_type,$type,$apiKey);
         }
-        public function engines()
+        public function engines($api="")
         {
-            $apiKey = "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";
+            $apiKey = "$api";
             $data = [
                 [
                     "id"=> "engine-id-0",
@@ -165,12 +165,12 @@ class Openai
             ];
             $url = "https://api.openai.com/v1/engines";
             $type= "GET";
-            return $this->callOpenAI($data, $url, $content_type,$type);
+            return $this->callOpenAI($data, $url, $content_type,$type,$apiKey);
         }
     
-        public function callOpenAI($data, $url, $content_type,$type)
+        public function callOpenAI($data, $url, $content_type,$type,$apiKey)
         {
-            $apiKey = "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";
+            $apiKey = "$apiKey";
             $url = $url;
          
             $curl = curl_init();
