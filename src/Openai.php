@@ -1,7 +1,7 @@
 <?php
 namespace Soumyaa\Openai;
 
-class Index
+class Openai
 {
     public function greet($greet = "Hello World")
     {
