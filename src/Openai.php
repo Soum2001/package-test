@@ -13,7 +13,7 @@ class Openai
          */
         public function completion()
         {
-            $apiKey = "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";
+            $apiKey = "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";
             $data = [
                 'prompt' => 'What is the capital of odisha',
             ];
@@ -27,7 +27,7 @@ class Openai
         }
         public function fineTune()
         {
-            $apiKey = "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";
+            $apiKey = "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";
             $data = [
                 "model" => "curie",
                 "prompt"=>"Overjoyed with the new iPhone! ->", 
@@ -45,7 +45,7 @@ class Openai
         }
         public function edit()
         {
-            $apiKey = "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";
+            $apiKey = "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";
             $data = [
                 "model" => "text-davinci-edit-001",
                 "input" => "What day of the wek is it?",
@@ -61,7 +61,7 @@ class Openai
         }
         public function embeddings()
         {
-            $apiKey = "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";
+            $apiKey = "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";
             $data = [
                 "model" => "text-embedding-ada-002",
                 "input" => "The food was delicious and the waiter...",
@@ -77,7 +77,7 @@ class Openai
         }
         public function files()
         {
-            $apiKey = "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";
+            $apiKey = "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";
             $data = [
               
                     "id"=> "file-ccdDZrC3iZVNiQVeEA6Z66wf",
@@ -100,7 +100,7 @@ class Openai
         }
         public function moderation()
         {
-            $apiKey = "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";
+            $apiKey = "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";
             $data = [
                 "id"=> "modr-5MWoLO",
                 "model"=> "text-moderation-001",
@@ -138,7 +138,7 @@ class Openai
         }
         public function engines()
         {
-            $apiKey = "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";
+            $apiKey = "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";
             $data = [
                 [
                     "id"=> "engine-id-0",
@@ -170,7 +170,7 @@ class Openai
     
         public function callOpenAI($data, $url, $content_type,$type)
         {
-            $apiKey = "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";
+            $apiKey = "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";
             $url = $url;
          
             $curl = curl_init();
