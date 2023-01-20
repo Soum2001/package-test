@@ -4,7 +4,7 @@ namespace Soumyaa\Openai;
 
 class Openai
 {
-    public function completion($api = "")
+    public function completion($api)
     {
         $apiKey = "$api";
         $data = [
@@ -14,7 +14,7 @@ class Openai
         $type = "POST";
         return $this->callOpenAI($data, $url, $type, $apiKey);
     }
-    public function fineTune($api = "")
+    public function fineTune($api)
     {
         $apiKey = "$api";
         $data = [
@@ -28,7 +28,7 @@ class Openai
         $type = "POST";
         return $this->callOpenAI($data, $url, $type, $apiKey);
     }
-    public function edit($api = "")
+    public function edit($api)
     {
         $apiKey = "$api";
         $data = [
@@ -40,7 +40,7 @@ class Openai
         $type = "POST";
         return $this->callOpenAI($data, $url, $type, $apiKey);
     }
-    public function embeddings($api = "")
+    public function embeddings($api)
     {
         $apiKey = "$api";
         $data = [
@@ -52,7 +52,7 @@ class Openai
         $type = "POST";
         return $this->callOpenAI($data, $url, $type, $apiKey);
     }
-    public function moderation($api = "")
+    public function moderation($api)
     {
         $apiKey = "$api";
         $data = [
@@ -63,7 +63,7 @@ class Openai
         $type = "POST";
         return $this->callOpenAI($data, $url, $type, $apiKey);
     }
-    public function engines($api = "")
+    public function engines($api)
     {
         $apiKey = "$api";
         $data = [];
