@@ -1,9 +1,9 @@
 {
-    "name": "soumyaa/openai",
+    "name": "MfOpenAiPhp",
     "type": "project",
     "autoload": {
         "psr-4": {
-            "Soumyaa\\Openai\\": "src/"
+            "MfOpenAiPhp\\Openai\\": "src/"
         }
     },
     "minimum-stability": "dev",

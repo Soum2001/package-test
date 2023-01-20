@@ -6,7 +6,7 @@ class Openai
 {
     public function completion($api)
     {
-        $apiKey = "$api";
+        $apiKey = $api;
         $data = [
             'prompt' => 'What is the capital of odisha',
         ];
@@ -16,7 +16,7 @@ class Openai
     }
     public function fineTune($api)
     {
-        $apiKey = "$api";
+        $apiKey = $api;
         $data = [
             "model" => "curie",
             "prompt" => "Overjoyed with the new iPhone! ->",
@@ -30,7 +30,7 @@ class Openai
     }
     public function edit($api)
     {
-        $apiKey = "$api";
+        $apiKey = $api;
         $data = [
             "model" => "text-davinci-edit-001",
             "input" => "What day of the wek is it?",
@@ -42,7 +42,7 @@ class Openai
     }
     public function embeddings($api)
     {
-        $apiKey = "$api";
+        $apiKey = $api;
         $data = [
             "model" => "text-embedding-ada-002",
             "input" => "The food was delicious and the waiter...",
@@ -54,7 +54,7 @@ class Openai
     }
     public function moderation($api)
     {
-        $apiKey = "$api";
+        $apiKey = $api;
         $data = [
             "input" => "I want to kill them.",
         ];
@@ -65,7 +65,7 @@ class Openai
     }
     public function engines($api)
     {
-        $apiKey = "$api";
+        $apiKey = $api;
         $data = [];
         $url = "https://api.openai.com/v1/engines";
         $type = "GET";
@@ -88,7 +88,7 @@ class Openai
                 CURLOPT_FOLLOWLOCATION => true,
                 CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
                 CURLOPT_CUSTOMREQUEST => $type,
-                CURLOPT_POSTFIELDS => json_encode([$data]),
+                CURLOPT_POSTFIELDS => json_encode($data),
                 CURLOPT_HTTPHEADER => array(
                     "Content-Type: application/json",
                     "Authorization: Bearer $apiKey"
