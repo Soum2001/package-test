@@ -1,0 +1,12 @@
+{
+    "name": "soumyaa/openai",
+    "type": "project",
+    "autoload": {
+        "psr-4": {
+            "Soumyaa\\Openai\\": "src/"
+        }
+    },
+    "minimum-stability": "dev",
+    "prefer-stable": true,
+    "require": {}
+}
