@@ -40,7 +40,7 @@ class Openai
     {
         $parameter = array(
             'data' => array(
-                "model" => $data['model'],
+                "model" => $data['model_id'],
                 'prompt' => $data['prompt'],
                 "max_tokens" => 7,
                 "temperature" => 0,
@@ -65,11 +65,12 @@ class Openai
     public function imageEdit($data)
     {
         $parameter = array(
-            'data' => json_encode(array(
+            'data' => array(
+                "image" => $data['image'],
                 "prompt" => $data['prompt'],
                 "n" => $data['n'],
                 "size" => $data['size'],
-            )),
+            ),
             'type' => "POST",
         );
         return $this->callOpenAI($parameter);
@@ -77,10 +78,10 @@ class Openai
 
     public function imageVariations($data)
     {
+
         $parameter = array(
-            'api_key' => "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",
             'data' => array(
-                "prompt" => $data['prompt'],
+                "image" => $data['image'],
                 "n" => $data['n'],
                 "size" => $data['size'],
             ),
@@ -90,20 +91,20 @@ class Openai
     }
     public function callOpenAI($parameter)
     {
-        if ($parameter["data"]["prompt"] == "") {
-            return "Give some message in prompt";
-        }
-        $url = $parameter['url'];
+        // if ($parameter["data"]["prompt"] == "") {
+        //     return "Give some message in prompt";
+        // }
+        // $url = $parameter['url'];
         //$prompt ="What is the capital of odisha";
         $curl = curl_init();
         if ($parameter['type'] == "POST" && $this->content_types = "application/json") {
             curl_setopt_array($curl, array(CURLOPT_POSTFIELDS => json_encode($parameter['data'])));
         }
-        elseif ($parameter['type'] == "POST" && $this->content_types = "multipart/form-data") {
+        if ($parameter['type'] == "POST" && $this->content_types = "multipart/form-data") {
             curl_setopt_array($curl, array(CURLOPT_POSTFIELDS => $parameter['data']));
         }
         curl_setopt_array($curl, array(
-            CURLOPT_URL => $url,
+            CURLOPT_URL => $this->url,
             CURLOPT_RETURNTRANSFER => true,
             CURLOPT_ENCODING => "",
             CURLOPT_MAXREDIRS => 10,
@@ -119,6 +120,7 @@ class Openai
         $response = curl_exec($curl);
         curl_close($curl);
         $response_data = json_decode($response, true);
-        return $response_data;
+        print_r($response_data);
+        //return $response_data;
     }
 }
